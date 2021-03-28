@@ -58,6 +58,9 @@ namespace BattleshipService.Application.Models
                     FireStatus.HasFire => ShootStatus.HitAShip,
                     _ => ShootStatus.Miss,
                 };
+
+                if (shootStatus != ShootStatus.Miss)
+                    break;
             }
 
             return shootStatus;
@@ -88,7 +91,9 @@ namespace BattleshipService.Application.Models
 
             for (int i = min; i < max; i++)
             {
-                var currentPosition = (shipLocation.Direction == ShipDirection.Down) ? new Position(shipLocation.Coordinate.XPosition, i) : new Position(i, shipLocation.Coordinate.YPosition);
+                var currentPosition = (shipLocation.Direction == ShipDirection.Down) ?
+                    new Position { XPosition = shipLocation.Coordinate.XPosition, YPosition = i }
+                    : new Position { XPosition = i, YPosition = shipLocation.Coordinate.YPosition };
 
                 if (!IsPositionWithingBoard(currentPosition))
                     return ShipPlacement.OutOfBoundary;
@@ -122,7 +127,9 @@ namespace BattleshipService.Application.Models
 
             for (int i = max; i > min; i--)
             {
-                var currentPosition = (shipLocation.Direction == ShipDirection.Up) ? new Position(shipLocation.Coordinate.XPosition, i) : new Position(i, shipLocation.Coordinate.YPosition);
+                var currentPosition = (shipLocation.Direction == ShipDirection.Up) ?
+                    new Position { XPosition = shipLocation.Coordinate.XPosition, YPosition = i }
+                    : new Position { XPosition = i, YPosition = shipLocation.Coordinate.YPosition };
 
                 if (!IsPositionWithingBoard(currentPosition))
                     return ShipPlacement.OutOfBoundary;

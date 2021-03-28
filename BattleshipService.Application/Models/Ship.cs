@@ -1,6 +1,7 @@
 ﻿using BattleshipService.Application.Enums;
 using BattleshipService.Application.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BattleshipService.Application.Models
 {
@@ -17,7 +18,7 @@ namespace BattleshipService.Application.Models
 
         public virtual FireStatus FireAtShip(Position position)
         {
-            if (BoardPositions.Contains(position))
+            if (BoardPositions.Any(i => i.XPosition == position.XPosition && i.YPosition == position.YPosition))
             {
                 LifeRemaining--;
 

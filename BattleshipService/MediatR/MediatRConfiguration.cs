@@ -3,6 +3,7 @@ using MediatR;
 using BattleshipService.Application.Player.Commands.CreatePlayer;
 using BattleshipService.Application.Player.Queries.GetPlayers;
 using BattleshipService.Application.Player.Queries.GetShipList;
+using BattleshipService.Application.Player.Queries.GetShootStatus;
 
 namespace BattleshipService.MediatR
 {
@@ -13,7 +14,8 @@ namespace BattleshipService.MediatR
             services.AddMediatR(
                 typeof(CreatePlayerCommandHandler),
                 typeof(GetPlayersQueryHandler),
-                typeof(GetshipListQueryHandler)
+                typeof(GetshipListQueryHandler),
+                typeof(GetShootStatusQueryHandler)
             );
         }
     }

@@ -31,7 +31,7 @@ namespace BattleshipService.Application.utils
 
         public static Position GetRandomCoordinate()
         {
-            return new Position(random.Next(1, 10), random.Next(1, 10));
+            return new Position { XPosition = random.Next(1, 10), YPosition = random.Next(1, 10) };
         }
     }
 }
