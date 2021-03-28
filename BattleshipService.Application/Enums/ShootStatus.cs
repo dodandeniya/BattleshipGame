@@ -6,7 +6,6 @@
         Duplicate,
         Miss,
         HitAShip,
-        HitAndSunk,
-        Win
+        HitAndSunk
     }
 }

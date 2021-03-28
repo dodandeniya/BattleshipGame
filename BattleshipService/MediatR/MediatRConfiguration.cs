@@ -4,7 +4,8 @@ using BattleshipService.Application.Player.Commands.CreatePlayer;
 using BattleshipService.Application.Player.Queries.GetPlayers;
 using BattleshipService.Application.Player.Queries.GetShipList;
 using BattleshipService.Application.Player.Queries.GetShootStatus;
-using BattleshipService.Application.PC.Queries;
+using BattleshipService.Application.PC.Queries.GetPCShootStatus;
+using BattleshipService.Application.Game.Queries.GetScores;
 
 namespace BattleshipService.MediatR
 {
@@ -17,7 +18,8 @@ namespace BattleshipService.MediatR
                 typeof(GetPlayersQueryHandler),
                 typeof(GetshipListQueryHandler),
                 typeof(GetShootStatusQueryHandler),
-                typeof(GetPCShootStatusQueryHandler)
+                typeof(GetPCShootStatusQueryHandler),
+                typeof(GetScoresQueryHandler)
             );
         }
     }

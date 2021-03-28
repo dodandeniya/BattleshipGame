@@ -1,4 +1,4 @@
-﻿using BattleshipService.Application.PC.Queries;
+﻿using BattleshipService.Application.PC.Queries.GetPCShootStatus;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;

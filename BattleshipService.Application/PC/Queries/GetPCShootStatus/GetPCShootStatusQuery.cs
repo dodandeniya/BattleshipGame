@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace BattleshipService.Application.PC.Queries
+namespace BattleshipService.Application.PC.Queries.GetPCShootStatus
 {
     public class GetPCShootStatusQuery : IRequest<ViewPCShootStatusQueryDto>
     {

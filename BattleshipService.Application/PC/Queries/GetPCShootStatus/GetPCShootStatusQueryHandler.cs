@@ -6,7 +6,7 @@ using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BattleshipService.Application.PC.Queries
+namespace BattleshipService.Application.PC.Queries.GetPCShootStatus
 {
     public class GetPCShootStatusQueryHandler : IRequestHandler<GetPCShootStatusQuery, ViewPCShootStatusQueryDto>
     {
@@ -20,6 +20,7 @@ namespace BattleshipService.Application.PC.Queries
         public async Task<ViewPCShootStatusQueryDto> Handle(GetPCShootStatusQuery request, CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
+
             ShootStatus shootStatus;
             Position position;
 

@@ -1,7 +1,7 @@
 ﻿using BattleshipService.Application.Enums;
 using BattleshipService.Application.Models;
 
-namespace BattleshipService.Application.PC.Queries
+namespace BattleshipService.Application.PC.Queries.GetPCShootStatus
 {
     public class ViewPCShootStatusQueryDto
     {
