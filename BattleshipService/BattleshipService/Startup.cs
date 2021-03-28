@@ -1,3 +1,4 @@
+using Battleship.Infrastructure.Middlewares;
 using BattleshipService.Application.Interfaces;
 using BattleshipService.Application.Models;
 using BattleshipService.MediatR;
@@ -62,6 +63,7 @@ namespace BattleshipService
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BattleshipService v1"));
             }
 
+            app.ConfigureExceptionHandler();
             app.UseHttpsRedirection();
 
             app.UseRouting();

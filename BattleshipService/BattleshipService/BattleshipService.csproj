@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Battleship.Infrastructure\Battleship.Infrastructure.csproj" />
     <ProjectReference Include="..\BattleshipService.Application\BattleshipService.Application.csproj" />
   </ItemGroup>
 
