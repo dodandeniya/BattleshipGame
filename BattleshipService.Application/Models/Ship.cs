@@ -13,7 +13,7 @@ namespace BattleshipService.Application.Models
         public int Size { get; set; }
         public bool IsSunk { get { return LifeRemaining == 0; } }
 
-        public virtual ICollection<Position> BoardPositions { get; set; }
+        public virtual ICollection<Position> BoardPositions { get; set; } = new List<Position>();
 
         public virtual FireStatus FireAtShip(Position position)
         {

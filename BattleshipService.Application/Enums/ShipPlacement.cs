@@ -1,4 +1,4 @@
-﻿namespace BattleshipService.Application.Ships.Enums
+﻿namespace BattleshipService.Application.Enums
 {
     public enum ShipPlacement
     {

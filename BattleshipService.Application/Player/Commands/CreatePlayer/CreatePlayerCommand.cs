@@ -1,9 +1,6 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace BattleshipService.Application.Player.Commands
+namespace BattleshipService.Application.Player.Commands.CreatePlayer
 {
     public class CreatePlayerCommand : IRequest<int>
     {
