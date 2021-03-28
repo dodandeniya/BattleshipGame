@@ -3,7 +3,7 @@ using BattleshipService.Application.Models;
 
 namespace BattleshipService.Application.PC.Queries.GetPCShootStatus
 {
-    public class ViewPCShootStatusQueryDto
+    public class ViewPCShootStatusDto
     {
         public ShootStatus ShootStatus { get; set; }
         public Position Position { get; set; }

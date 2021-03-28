@@ -2,7 +2,7 @@
 
 namespace BattleshipService.Application.PC.Queries.GetPCShootStatus
 {
-    public class GetPCShootStatusQuery : IRequest<ViewPCShootStatusQueryDto>
+    public class GetPCShootStatusQuery : IRequest<ViewPCShootStatusDto>
     {
     }
 }

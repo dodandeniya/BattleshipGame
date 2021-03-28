@@ -6,6 +6,7 @@ using BattleshipService.Application.Player.Queries.GetShipList;
 using BattleshipService.Application.Player.Queries.GetShootStatus;
 using BattleshipService.Application.PC.Queries.GetPCShootStatus;
 using BattleshipService.Application.Game.Queries.GetScores;
+using BattleshipService.Application.Game.Queries.GetWinner;
 
 namespace BattleshipService.MediatR
 {
@@ -19,7 +20,8 @@ namespace BattleshipService.MediatR
                 typeof(GetshipListQueryHandler),
                 typeof(GetShootStatusQueryHandler),
                 typeof(GetPCShootStatusQueryHandler),
-                typeof(GetScoresQueryHandler)
+                typeof(GetScoresQueryHandler),
+                typeof(GetWinnerQueryHandler)
             );
         }
     }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BattleshipService.Application.Player.Queries.GetShootStatus
 {
-    public class GetShootStatusQueryHandler : IRequestHandler<GetShootStatusQuery, ViewShootStatusQueryDto>
+    public class GetShootStatusQueryHandler : IRequestHandler<GetShootStatusQuery, ViewShootStatusDto>
     {
         private readonly IGameSetup gameSetup;
 
@@ -14,11 +14,11 @@ namespace BattleshipService.Application.Player.Queries.GetShootStatus
             gameSetup = gs;
         }
 
-        public async Task<ViewShootStatusQueryDto> Handle(GetShootStatusQuery request, CancellationToken cancellationToken)
+        public async Task<ViewShootStatusDto> Handle(GetShootStatusQuery request, CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
-            return new ViewShootStatusQueryDto
+            return new ViewShootStatusDto
             {
                 ShootStatus = gameSetup.State.Player2.Board.FireShot(request.Position),
                 Position = request.Position
