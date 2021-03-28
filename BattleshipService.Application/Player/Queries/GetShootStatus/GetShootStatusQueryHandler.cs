@@ -18,8 +18,6 @@ namespace BattleshipService.Application.Player.Queries.GetShootStatus
         {
             cancellationToken.ThrowIfCancellationRequested();
 
-            var pos = request.Position;
-
             return new ViewShootStatusQueryDto
             {
                 ShootStatus = gameSetup.State.Player2.Board.FireShot(request.Position),
