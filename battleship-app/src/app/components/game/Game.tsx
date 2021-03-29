@@ -8,8 +8,9 @@ import {
   getPlayersList,
   getShipList,
 } from "../../redux/actions/player/playerActions";
-import IPlayer from "../../shared/interfaces/IPlayer";
 import { getPCShootStatus } from "../../redux/actions/pc/pcActions";
+import { Grid, Typography } from "@material-ui/core";
+import IPosition from "../../shared/interfaces/IPosition";
 
 export interface IGameProps {}
 
@@ -24,17 +25,29 @@ export default function Game(props: IGameProps) {
   useEffect(() => {
     dispatch(getPlayersList());
     dispatch(getShipList());
-    dispatch(getPlayerShootStatus(1, 2));
+
     dispatch(getPCShootStatus());
   }, [dispatch]);
 
+  const handleClick = (position: IPosition) => {
+    dispatch(getPlayerShootStatus(position));
+  };
+
   return (
-    <div>
-      Game! <Board />
-      {playerList.length > 0 &&
-        playerList.map((item: IPlayer, index: number) => (
-          <p key={index}>{item.name}</p>
-        ))}
-    </div>
+    <>
+      <Grid item xs={12} sm={12} md={6}>
+        {playerList.length > 0 && (
+          <Typography variant="h6">Player : {playerList[0].name}</Typography>
+        )}
+
+        <Board enabled={false} handleClick={handleClick} />
+      </Grid>
+      <Grid item xs={12} sm={12} md={6}>
+        {playerList.length > 0 && (
+          <Typography variant="h6">Player : {playerList[1].name}</Typography>
+        )}
+        <Board enabled handleClick={handleClick} />
+      </Grid>
+    </>
   );
 }

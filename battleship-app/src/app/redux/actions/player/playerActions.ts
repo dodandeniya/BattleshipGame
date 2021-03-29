@@ -1,6 +1,7 @@
 import * as actions from "../../constants";
 import * as api from "../../../apis/playerApi";
 import { setErrors } from "../errors/errorsActions";
+import IPosition from "../../../shared/interfaces/IPosition";
 
 export const createPlayer = (name: string) => async (
   dispatch: any,
@@ -65,14 +66,14 @@ export const getShipList = () => async (dispatch: any, getState: any) => {
   }
 };
 
-export const getPlayerShootStatus = (x: number, y: number) => async (
+export const getPlayerShootStatus = (position: IPosition) => async (
   dispatch: any,
   getState: any
 ) => {
   try {
     const params = {
-      "position.xPosition": x,
-      "position.yPosition": y,
+      "position.xPosition": position.xPosition,
+      "position.yPosition": position.yPosition,
     };
 
     dispatch({ type: actions.GET_SHOOT_STATUS_REQUEST });
