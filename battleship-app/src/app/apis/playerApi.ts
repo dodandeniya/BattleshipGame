@@ -8,3 +8,10 @@ export const createPlayer = async (name: string) => {
     .then(handleResponse)
     .catch(handleError);
 };
+
+export const getPlayers = async () => {
+  return await axios
+    .get(`${apiUrl}/Player`, getConfig())
+    .then(handleResponse)
+    .catch(handleError);
+};

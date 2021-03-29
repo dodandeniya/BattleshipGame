@@ -24,3 +24,23 @@ export const createPlayer = (name: string) => async (
     dispatch(setErrors(error));
   }
 };
+
+export const getPlayersList = () => async (dispatch: any, getState: any) => {
+  try {
+    dispatch({ type: actions.GET_PLAYERS_LIST_REQUEST });
+    const data = await api.getPlayers();
+    dispatch({
+      type: actions.GET_PLAYERS_LIST_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: actions.GET_PLAYERS_LIST_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+    dispatch(setErrors(error));
+  }
+};
