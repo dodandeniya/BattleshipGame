@@ -4,6 +4,7 @@ import {
   initialPlayer,
   initialPlayerList,
   initialShipList,
+  initialShootStatus,
 } from "../../initialStates";
 
 export const playerReducer = (state = initialPlayer, action: PlayerTypes) => {
@@ -53,6 +54,25 @@ export const getShipListReducer = (
       return action.payload;
 
     case actions.GET_SHIP_LIST_FAIL:
+      return { error: action.payload as string };
+
+    default:
+      return state;
+  }
+};
+
+export const getPlayerShootStatusReducer = (
+  state = initialShootStatus,
+  action: PlayerTypes
+) => {
+  switch (action.type) {
+    case actions.GET_SHOOT_STATUS_REQUEST:
+      return state;
+
+    case actions.GET_SHOOT_STATUS_SUCCESS:
+      return action.payload;
+
+    case actions.GET_SHOOT_STATUS_FAIL:
       return { error: action.payload as string };
 
     default:

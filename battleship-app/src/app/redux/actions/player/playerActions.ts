@@ -64,3 +64,31 @@ export const getShipList = () => async (dispatch: any, getState: any) => {
     dispatch(setErrors(error));
   }
 };
+
+export const getPlayerShootStatus = (x: number, y: number) => async (
+  dispatch: any,
+  getState: any
+) => {
+  try {
+    const params = {
+      "position.xPosition": x,
+      "position.yPosition": y,
+    };
+
+    dispatch({ type: actions.GET_SHOOT_STATUS_REQUEST });
+    const data = await api.getPlayerShootStatus(params);
+    dispatch({
+      type: actions.GET_SHOOT_STATUS_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: actions.GET_SHOOT_STATUS_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+    dispatch(setErrors(error));
+  }
+};

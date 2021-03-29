@@ -10,7 +10,10 @@ interface IPlayerTypes {
     | typeof actions.GET_PLAYERS_LIST_SUCCESS
     | typeof actions.GET_SHIP_LIST_FAIL
     | typeof actions.GET_SHIP_LIST_REQUEST
-    | typeof actions.GET_SHIP_LIST_SUCCESS;
+    | typeof actions.GET_SHIP_LIST_SUCCESS
+    | typeof actions.GET_SHOOT_STATUS_FAIL
+    | typeof actions.GET_SHOOT_STATUS_REQUEST
+    | typeof actions.GET_SHOOT_STATUS_SUCCESS;
 
   payload: any;
 }

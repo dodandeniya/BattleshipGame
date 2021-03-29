@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/reducers";
 import {
+  getPlayerShootStatus,
   getPlayersList,
   getShipList,
 } from "../../redux/actions/player/playerActions";
@@ -22,6 +23,7 @@ export default function Game(props: IGameProps) {
   useEffect(() => {
     dispatch(getPlayersList());
     dispatch(getShipList());
+    dispatch(getPlayerShootStatus(1, 2));
   }, [dispatch]);
 
   return (
