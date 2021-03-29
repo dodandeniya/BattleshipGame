@@ -18,4 +18,14 @@ interface IPlayerTypes {
   payload: any;
 }
 
+interface IPCPlayerTypes {
+  type:
+    | typeof actions.GET_PC_SHOOT_STATUS_FAIL
+    | typeof actions.GET_PC_SHOOT_STATUS_REQUEST
+    | typeof actions.GET_PC_SHOOT_STATUS_SUCCESS;
+
+  payload: any;
+}
+
 export type PlayerTypes = IPlayerTypes;
+export type PCPlayerTypes = IPCPlayerTypes;

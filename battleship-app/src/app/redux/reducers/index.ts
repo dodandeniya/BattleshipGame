@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import { errorsReducer } from "./errors/errorsReducer";
+import { getPCPlayerShootStatusReducer } from "./pc/pcReducer";
 import {
   getPlayerShootStatusReducer,
   getShipListReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   playerList: playersListReducer,
   myShipList: getShipListReducer,
   myShootStatus: getPlayerShootStatusReducer,
+  pcShootStatus: getPCPlayerShootStatusReducer,
   errors: errorsReducer,
 });
 

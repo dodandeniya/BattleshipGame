@@ -9,6 +9,7 @@ import {
   getShipList,
 } from "../../redux/actions/player/playerActions";
 import IPlayer from "../../shared/interfaces/IPlayer";
+import { getPCShootStatus } from "../../redux/actions/pc/pcActions";
 
 export interface IGameProps {}
 
@@ -24,6 +25,7 @@ export default function Game(props: IGameProps) {
     dispatch(getPlayersList());
     dispatch(getShipList());
     dispatch(getPlayerShootStatus(1, 2));
+    dispatch(getPCShootStatus());
   }, [dispatch]);
 
   return (
