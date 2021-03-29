@@ -1,10 +1,15 @@
 import { combineReducers } from "redux";
 import { errorsReducer } from "./errors/errorsReducer";
-import { playerReducer, playersListReducer } from "./player/playerReducer";
+import {
+  getShipListReducer,
+  playerReducer,
+  playersListReducer,
+} from "./player/playerReducer";
 
 const rootReducer = combineReducers({
   player: playerReducer,
   playerList: playersListReducer,
+  myShipList: getShipListReducer,
   errors: errorsReducer,
 });
 

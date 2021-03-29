@@ -3,7 +3,10 @@ import Board from "../board/Board";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/reducers";
-import { getPlayersList } from "../../redux/actions/player/playerActions";
+import {
+  getPlayersList,
+  getShipList,
+} from "../../redux/actions/player/playerActions";
 import IPlayer from "../../shared/interfaces/IPlayer";
 
 export interface IGameProps {}
@@ -18,6 +21,7 @@ export default function Game(props: IGameProps) {
 
   useEffect(() => {
     dispatch(getPlayersList());
+    dispatch(getShipList());
   }, [dispatch]);
 
   return (

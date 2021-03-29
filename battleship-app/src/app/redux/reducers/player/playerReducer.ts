@@ -1,6 +1,10 @@
 import { PlayerTypes } from "../../actions/actionTypes";
 import * as actions from "../../constants";
-import { initialPlayer, initialPlayerList } from "../../initialStates";
+import {
+  initialPlayer,
+  initialPlayerList,
+  initialShipList,
+} from "../../initialStates";
 
 export const playerReducer = (state = initialPlayer, action: PlayerTypes) => {
   switch (action.type) {
@@ -30,6 +34,25 @@ export const playersListReducer = (
       return action.payload;
 
     case actions.GET_PLAYERS_LIST_FAIL:
+      return { error: action.payload as string };
+
+    default:
+      return state;
+  }
+};
+
+export const getShipListReducer = (
+  state = initialShipList,
+  action: PlayerTypes
+) => {
+  switch (action.type) {
+    case actions.GET_SHIP_LIST_REQUEST:
+      return state;
+
+    case actions.GET_SHIP_LIST_SUCCESS:
+      return action.payload;
+
+    case actions.GET_SHIP_LIST_FAIL:
       return { error: action.payload as string };
 
     default:

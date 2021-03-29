@@ -15,3 +15,10 @@ export const getPlayers = async () => {
     .then(handleResponse)
     .catch(handleError);
 };
+
+export const getShipList = async () => {
+  return await axios
+    .get(`${apiUrl}/Player/ShipList`, getConfig())
+    .then(handleResponse)
+    .catch(handleError);
+};

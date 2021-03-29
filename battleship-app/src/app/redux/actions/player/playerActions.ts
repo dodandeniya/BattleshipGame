@@ -44,3 +44,23 @@ export const getPlayersList = () => async (dispatch: any, getState: any) => {
     dispatch(setErrors(error));
   }
 };
+
+export const getShipList = () => async (dispatch: any, getState: any) => {
+  try {
+    dispatch({ type: actions.GET_SHIP_LIST_REQUEST });
+    const data = await api.getShipList();
+    dispatch({
+      type: actions.GET_SHIP_LIST_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: actions.GET_SHIP_LIST_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+    dispatch(setErrors(error));
+  }
+};

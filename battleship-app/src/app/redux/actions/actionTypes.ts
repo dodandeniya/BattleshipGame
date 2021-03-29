@@ -7,7 +7,10 @@ interface IPlayerTypes {
     | typeof actions.CREATE_PLAYER_SUCCESS
     | typeof actions.GET_PLAYERS_LIST_FAIL
     | typeof actions.GET_PLAYERS_LIST_REQUEST
-    | typeof actions.GET_PLAYERS_LIST_SUCCESS;
+    | typeof actions.GET_PLAYERS_LIST_SUCCESS
+    | typeof actions.GET_SHIP_LIST_FAIL
+    | typeof actions.GET_SHIP_LIST_REQUEST
+    | typeof actions.GET_SHIP_LIST_SUCCESS;
 
   payload: any;
 }
